@@ -5,7 +5,7 @@ CLANG = clang++
 CPP_FLAGS = -std=c++23 -O3
 BUILD_DIRECTORY = build
 
-all: vector_test limit_int bench
+all: vector_test limit_int bench array_access
 	@echo "All examples are builded"
 
 build: 
@@ -18,6 +18,9 @@ limit_int: example_limit_int
 	@echo "$< are builded"
 
 bench: example_bit_sdvig
+	@echo "$< are builded"
+
+array_access: example_array_access
 	@echo "$< are builded"
 
 

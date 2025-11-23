@@ -1,17 +1,18 @@
 #include <iostream>
 #include <limits>
 
-bool check_overflow(int x) {
-    // Если x + 1 переполнится, оно станет маленьким, и условие будет false
-    return (x + 1) > x;
+bool can_add_one(int x) {
+    return !((x + 1) > x);
 }
 
 int main() {
-    int max = std::numeric_limits<int>::max(); 
+    int max_val = std::numeric_limits<int>::max();
     
-    if (check_overflow(max)) {
-        std::cout << "UB не сработало: True\n";
+    if (can_add_one(max_val)) {
+        std::cout << "Не UB" << std::endl;
     } else {
-        std::cout << "UB!!!!\n";
+        std::cout << "UB" << std::endl;
     }
+    
+    return 0;
 }
